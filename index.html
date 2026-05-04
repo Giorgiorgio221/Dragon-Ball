@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball Quiz Definitivo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    
+    <div class="container">
+        <!-- Tela de Início -->
+        <div id="start-screen" class="screen active">
+            <h1 class="title">DRAGON BALL <br><span class="subtitle">QUIZ DEFINITIVO</span></h1>
+            <p class="description">Teste seus conhecimentos em 120 perguntas sobre todo o universo da franquia. De fã casual a Anjo Supremo, qual é o seu nível?</p>
+            
+            <div class="rules">
+                <h3>Regras:</h3>
+                <ul>
+                    <li><span class="diff-easy">Fácil:</span> 10 pontos</li>
+                    <li><span class="diff-medium">Médio:</span> 20 pontos</li>
+                    <li><span class="diff-hard">Difícil:</span> 30 pontos</li>
+                    <li>Você tem 15 segundos por pergunta!</li>
+                </ul>
+            </div>
+
+            <div class="ranking-preview">
+                <p>Seu Recorde: <span id="high-score">0</span> pontos</p>
+            </div>
+            
+            <button id="start-btn" class="btn btn-primary">ELEVAR O KI E COMEÇAR</button>
+        </div>
+
+        <!-- Tela do Jogo -->
+        <div id="game-screen" class="screen">
+            <div class="game-header">
+                <div class="stats">
+                    <div class="stat-box">
+                        <span class="label">Pergunta</span>
+                        <span id="question-counter" class="value">1/120</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Pontuação</span>
+                        <span id="score-display" class="value">0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Dificuldade</span>
+                        <span id="difficulty-display" class="value diff-easy">Fácil</span>
+                    </div>
+                </div>
+                <div class="timer-container">
+                    <div id="timer-bar" class="timer-bar"></div>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <span id="category-badge" class="badge">Categoria</span>
+                <h2 id="question-text">Carregando pergunta...</h2>
+                
+                <div id="options-container" class="options-grid">
+                    <button class="option-btn" data-index="0">A</button>
+                    <button class="option-btn" data-index="1">B</button>
+                    <button class="option-btn" data-index="2">C</button>
+                    <button class="option-btn" data-index="3">D</button>
+                </div>
+
+                <div id="feedback-container" class="feedback hidden">
+                    <h3 id="feedback-title">Correto!</h3>
+                    <p id="feedback-explanation">A explicação da resposta vai aqui.</p>
+                    <button id="next-btn" class="btn btn-secondary">PRÓXIMA PERGUNTA</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela de Resultados -->
+        <div id="result-screen" class="screen">
+            <h1 class="title">RESULTADO FINAL</h1>
+            <div class="final-score-container">
+                <span class="label">Pontuação Total:</span>
+                <span id="final-score" class="value huge">0</span>
+            </div>
+            
+            <div class="rank-container">
+                <h3 class="label">Seu Nível de Poder:</h3>
+                <h2 id="rank-title" class="rank">Guerreiro Z</h2>
+                <p id="rank-desc" class="rank-description">Você sabe o básico para sobreviver!</p>
+            </div>
+
+            <div class="action-buttons">
+                <button id="restart-btn" class="btn btn-primary">JOGAR NOVAMENTE</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
